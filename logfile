@@ -1,0 +1,149 @@
+LOG:  database system was shut down at 2013-05-29 21:08:38 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "michaelsteinberg" does not exist
+FATAL:  database "michaelsteinberg" does not exist
+FATAL:  database "michaelsteinberg" does not exist
+FATAL:  database "michaelsteinberg" does not exist
+FATAL:  database "michaelsteinberg" does not exist
+FATAL:  database "michaelsteinberg" does not exist
+FATAL:  database "testdb" does not exist
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+WARNING:  pgstat wait timeout
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+WARNING:  pgstat wait timeout
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+WARNING:  pgstat wait timeout
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  received smart shutdown request
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No such file or directory
+WARNING:  pgstat wait timeout
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+PANIC:  could not open control file "global/pg_control": No such file or directory
+LOG:  checkpointer process (PID 34569) was terminated by signal 6: Abort trap
+LOG:  terminating any other active server processes
+LOG:  could not open temporary statistics file "global/pgstat.tmp": No such file or directory
+LOG:  abnormal database system shutdown

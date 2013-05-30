@@ -13,3 +13,17 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+public/system
+*.DS_Store
+coverage/*
+*.swp
+rerun.txt
+tags
+!.keep
+.env
+/public/assets
+bin/
+!bin/setup
+coverage
+vendor/cache
