@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'pg'
 gem 'jquery-rails'
+gem 'devise'
+gem 'haml'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
