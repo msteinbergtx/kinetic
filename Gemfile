@@ -17,8 +17,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara-webkit', '~> 0.14.0'
-  gem 'database_cleaner' 
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'warden'
 end
