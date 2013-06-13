@@ -1,0 +1,28 @@
+Commissions Rules
+%table
+  %tr
+    %th
+      Name
+    %th
+      Status
+    %th
+      Start Date
+    %th
+      End Date
+    %th
+      Actions
+  %tr
+  - @rules.each do |rule|
+    %tr
+      %td
+        = rule.name
+      %td
+        = rule.active
+      %td
+        = rule.start_date
+      %td
+        = rule.end_date
+      %td
+        = link_to 'Edit', edit_rule_path(rule)
+
+= link_to 'New rule', new_rule_path

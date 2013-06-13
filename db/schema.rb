@@ -11,7 +11,62 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530052628) do
+ActiveRecord::Schema.define(:version => 20130613060021) do
+
+  create_table "basic_applicabilities", :force => true do |t|
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "calculation", :null => false
+  end
+
+  create_table "basic_payment_amounts", :force => true do |t|
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "calculation", :null => false
+  end
+
+  create_table "date_offset_calculation_dates", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "event_type", :null => false
+    t.string   "modifier",   :null => false
+    t.integer  "day_count",  :null => false
+  end
+
+  create_table "date_offset_payment_dates", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "event_type", :null => false
+    t.string   "modifier",   :null => false
+    t.integer  "day_count",  :null => false
+  end
+
+  create_table "deals", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name",       :null => false
+    t.decimal  "amount",     :null => false
+    t.datetime "sell_date",  :null => false
+    t.datetime "start_date", :null => false
+    t.datetime "end_date"
+  end
+
+  create_table "rules", :force => true do |t|
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "name",                         :null => false
+    t.boolean  "active",                       :null => false
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "calculation_date_engine_id",   :null => false
+    t.string   "calculation_date_engine_type", :null => false
+    t.integer  "payment_date_engine_id",       :null => false
+    t.string   "payment_date_engine_type",     :null => false
+    t.integer  "payment_amount_engine_id",     :null => false
+    t.string   "payment_amount_engine_type",   :null => false
+    t.integer  "applicability_engine_id",      :null => false
+    t.string   "applicability_engine_type",    :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

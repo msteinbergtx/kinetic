@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 feature 'User Sessions', js: true do
+  scenario 'tries to access the site without signing in' do
+    visit new_rule_path
+
+    expect(page).to have_content 'You need to sign in or sign up before continuing'
+  end
+
   scenario 'signs a user in' do
     user = build(:user, email: 'britt@test.com')
     user.password = 'test1234'
@@ -30,8 +36,6 @@ feature 'User Sessions', js: true do
 
   scenario 'User signs out' do
     user = build(:user, email: 'britt@test.com')
-    user.password = 'test1234'
-    user.save!
 
     login_as(user)
     visit root_path

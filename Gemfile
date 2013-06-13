@@ -5,6 +5,8 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'devise'
 gem 'haml'
+gem 'simple_form'
+gem 'strong_parameters'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -14,12 +16,13 @@ end
 
 group :development, :test do
   gem 'awesome_print'
+  gem 'rspec-rails'
 end
 
 group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'warden'
 end

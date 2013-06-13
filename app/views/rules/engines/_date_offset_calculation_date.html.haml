@@ -1,0 +1,5 @@
+.js-calculation-date
+  = calculation_date_form.input :event_type
+  = calculation_date_form.input :modifier
+  = calculation_date_form.input :day_count
+  = calculation_date_form.input :type, as: :hidden, input_html: { value: 'DateOffsetCalculationDate' }
