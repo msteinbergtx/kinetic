@@ -28,7 +28,7 @@ feature 'User works with Rule', js: true do
 
     click_button 'Create Rule'
 
-    expect(page).to have_content 'Howdy!'
+    expect(page).to have_content 'Commissions Rules'
   end
 
   scenario 'updates an existing Rule' do

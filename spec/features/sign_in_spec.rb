@@ -18,7 +18,7 @@ feature 'User Sessions', js: true do
 
     click_button 'Sign in'
 
-    expect(page).to have_content 'Howdy!'
+    expect(page).to have_content 'Kinetic'
   end
 
   scenario 'User registers' do
@@ -30,7 +30,7 @@ feature 'User Sessions', js: true do
 
     click_button 'Sign up'
 
-    expect(page).to have_content 'Howdy!'
+    expect(page).to have_content 'Kinetic'
     expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
 

@@ -10,7 +10,8 @@ class RulesController < ApplicationController
   def create
     @rule = RuleBuilder.create_from_params(rules_params, params[:rule])
     if @rule.save
-      redirect_to root_path
+      @rules = Rule.all
+      render :index
     else
       render :new
     end
