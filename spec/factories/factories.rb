@@ -2,6 +2,19 @@ FactoryGirl.define do
   factory :user do
     email 'test@email.com'
     password 'password'
+    admin false
+  end
+
+  factory :admin, class: User do
+    email 'test@email.com'
+    password 'password'
+    admin true
+  end
+
+  factory :commission do
+    amount 100.00
+    payment_date Date.today
+    association :user
   end
 
   factory :rule do

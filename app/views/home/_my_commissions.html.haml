@@ -1,0 +1,16 @@
+- if commissions.count > 0
+  Commissions
+  %table
+    %tr
+      %th
+        Payment Date
+      %th
+        Amount
+    - commissions.each do |commission|
+      %tr
+        %td
+          = commission.payment_date
+        %td
+          = number_to_currency(commission.amount)
+- else
+  You have no commissions
