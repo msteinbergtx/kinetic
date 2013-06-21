@@ -1,6 +1,8 @@
 class RulesController < ApplicationController
+  before_filter :is_admin?
+
   def index
-    @rules = Rule.all
+    @rules = current_user.organization.rules
   end
 
   def new
@@ -9,9 +11,9 @@ class RulesController < ApplicationController
 
   def create
     @rule = RuleBuilder.create_from_params(rules_params, params[:rule])
+    @rule.organization = current_user.organization
     if @rule.save
-      @rules = Rule.all
-      render :index
+      redirect_to action: :index
     else
       render :new
     end
@@ -29,8 +31,7 @@ class RulesController < ApplicationController
     )
 
     if @rule.save
-      @rules = Rule.all
-      render :index
+      redirect_to action: :index
     else
       render :edit
     end
@@ -45,5 +46,11 @@ class RulesController < ApplicationController
       :end_date,
       :active
     )
+  end
+
+  def is_admin?
+    unless current_user.is?(:admin)
+      render status: :forbidden, text: 'no deal'
+    end
   end
 end

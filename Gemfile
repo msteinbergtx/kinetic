@@ -7,6 +7,7 @@ gem 'devise'
 gem 'haml'
 gem 'simple_form'
 gem 'strong_parameters'
+gem 'cancan'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -1,7 +1,10 @@
 Kinetic
 = link_to 'Sign out', destroy_user_session_path, method: :delete
 %br
-- if current_user.admin?
+- if current_user.is?(:admin)
   = link_to 'Commission rules', rules_path
-- else
-  = render 'my_commissions', commissions: @commissions
+
+- if current_user.is?(:moderator)
+  = link_to 'Organizations', organizations_path
+
+= render 'my_commissions', commissions: @commissions

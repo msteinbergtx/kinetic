@@ -2,13 +2,20 @@ FactoryGirl.define do
   factory :user do
     email 'test@email.com'
     password 'password'
-    admin false
+    roles_list 'user'
   end
 
   factory :admin, class: User do
     email 'test@email.com'
     password 'password'
-    admin true
+    roles_list 'admin|user'
+    association :organization
+  end
+
+  factory :moderator, class: User do
+    email 'test@email.com'
+    password 'password'
+    roles_list 'moderator|admin|user'
   end
 
   factory :commission do
@@ -17,9 +24,14 @@ FactoryGirl.define do
     association :user
   end
 
+  factory :organization do
+    name 'My Organization'
+  end
+
   factory :rule do
     name 'test rule'
     active true
+    association :organization
     association :applicability_engine, factory: :basic_applicability
     association :payment_amount_engine, factory: :basic_payment_amount
     association :calculation_date_engine, factory: :date_offset_calculation_date

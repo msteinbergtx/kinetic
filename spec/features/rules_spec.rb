@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'User works with Rule', js: true do
   scenario 'creates a rule' do
-    user = create(:user)
+    user = create(:admin)
     login_as(user)
 
     visit new_rule_path
@@ -32,8 +32,8 @@ feature 'User works with Rule', js: true do
   end
 
   scenario 'updates an existing Rule' do
-    create(:rule, name: 'the old name')
-    user = create(:user)
+    rule = create(:rule, name: 'the old name')
+    user = create(:admin, organization: rule.organization)
     login_as(user)
 
     visit rules_path
@@ -49,8 +49,8 @@ feature 'User works with Rule', js: true do
       :basic_applicability,
       calculation: 'old calculation'
     )
-    create(:rule, applicability_engine: applicability_engine)
-    user = create(:user)
+    rule = create(:rule, applicability_engine: applicability_engine)
+    user = create(:admin, organization: rule.organization)
     login_as(user)
 
     visit rules_path
@@ -60,5 +60,18 @@ feature 'User works with Rule', js: true do
     click_on 'Edit'
 
     expect(find_field('Applies to').value).to eq 'new calculation'
+  end
+
+  scenario 'only shows a user rules from their organization' do
+    organization = create(:organization)
+    user = create(:admin, organization: organization)
+    create(:rule, name: 'part of my org', organization: organization)
+    create(:rule, name: 'not part of my org')
+    login_as(user)
+
+    visit rules_path
+
+    expect(page).to have_content 'part of my org'
+    expect(page).not_to have_content 'not part of my org'
   end
 end

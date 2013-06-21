@@ -3,6 +3,7 @@ class Rule < ActiveRecord::Base
   belongs_to :calculation_date_engine, polymorphic: true
   belongs_to :payment_amount_engine, polymorphic: true
   belongs_to :payment_date_engine, polymorphic: true
+  belongs_to :organization
 
   validates :name, presence: true
   validates :active, inclusion: { in: [true, false] }
