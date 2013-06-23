@@ -10,6 +10,7 @@ module Kinetic
   class Application < Rails::Application
     config.autoload_paths += %W{
       #{config.root}/app/builders
+      #{config.root}/app/services
       #{config.root}/app/models/engine
     }
     config.assets.initialize_on_precompile = false

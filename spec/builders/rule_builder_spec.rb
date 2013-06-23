@@ -12,8 +12,8 @@ describe RuleBuilder do
         to be_an_instance_of(Engine::DateOffsetPaymentDate)
       expect(rule.applicability_engine).
         to be_an_instance_of(Engine::BasicApplicability)
-      expect(rule.payment_amount_engine).
-        to be_an_instance_of(Engine::BasicPaymentAmount)
+      expect(rule.compensation_engine).
+        to be_an_instance_of(Engine::BasicCompensation)
     end
   end
 
@@ -24,7 +24,7 @@ describe RuleBuilder do
       rule.should_receive(:calculation_date_engine=).with(builder)
       rule.should_receive(:payment_date_engine=).with(builder)
       rule.should_receive(:applicability_engine=).with(builder)
-      rule.should_receive(:payment_amount_engine=).with(builder)
+      rule.should_receive(:compensation_engine=).with(builder)
       Rule.stub(:new) { rule }
       EngineBuilder.stub(:build) { builder }
 
@@ -39,7 +39,7 @@ describe RuleBuilder do
       rule.should_receive(:calculation_date_engine=).with(builder)
       rule.should_receive(:payment_date_engine=).with(builder)
       rule.should_receive(:applicability_engine=).with(builder)
-      rule.should_receive(:payment_amount_engine=).with(builder)
+      rule.should_receive(:compensation_engine=).with(builder)
       Rule.stub(:find) { rule }
       EngineBuilder.stub(:build) { builder }
 

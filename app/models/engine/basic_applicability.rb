@@ -4,4 +4,8 @@ class Engine::BasicApplicability < ActiveRecord::Base
   validates :calculation, presence: true
 
   attr_accessible :calculation
+
+  def filter_rules(deals)
+    deals.where(calculation)
+  end
 end

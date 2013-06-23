@@ -1,0 +1,83 @@
+****** THIS PAGE IS FOR TESTING PURPOSES ONLY ******
+%br
+%br
+Deals
+%br
+%table
+  %tr
+    %th
+      Name
+    %th
+      Amount
+    %th
+      User
+    %th
+      Organization
+    %th
+      Actions
+  - @deals.each do |deal|
+    %tr
+      %td
+        = deal.name
+      %td
+        = deal.amount
+      %td
+        = deal.user.email
+      %td
+        = deal.organization.name
+      %td
+        = link_to 'Calculate', calculate_deal_path(deal), method: 'POST'
+
+= link_to 'New deal', new_deal_path
+%br
+%br
+Commission Schedules
+%br
+%table
+  %tr
+    %th
+      Deal name
+    %th
+      Rule name
+    %th
+      Payment date
+    %th
+      Calculation date
+  - @scheduled_commissions.each do |schedule|
+    %tr
+      %td
+        = schedule.deal.name
+      %td
+        = schedule.rule.name
+      %td
+        = schedule.commission_payment_date
+      %td
+        = schedule.calculate_commission_date
+%br
+%br
+Commissions
+%br
+%table
+  %tr
+    %th
+      Deal name
+    %th
+      Rule name
+    %th
+      User email
+    %th
+      Payment date
+    %th
+      Payment amount
+  - @commissions.each do |commission|
+    %tr
+      %td
+        = commission.deal.name
+      %td
+        = commission.rule.name
+      %td
+        = commission.user.email
+      %td
+        = commission.payment_date
+      %td
+        = commission.amount

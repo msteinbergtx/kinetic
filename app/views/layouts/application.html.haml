@@ -5,8 +5,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    - if current_user.present?
+      You are currently logged in to Organization #{current_user.organization.present? ? current_user.organization.name : 'No Org'} as User #{current_user.email}
     %p{ class: 'notice' }
       = notice
     %p{ class: 'alert' }
       = alert
+    = link_to 'Home', root_path
+    %br
     = yield

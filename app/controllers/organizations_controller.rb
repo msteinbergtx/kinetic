@@ -38,10 +38,4 @@ class OrganizationsController < ApplicationController
   def organization_params
     params.require(:organization).permit(:name)
   end
-
-  def is_moderator?
-    unless current_user.is?(:moderator)
-      render status: :forbidden, text: 'no deal'
-    end
-  end
 end

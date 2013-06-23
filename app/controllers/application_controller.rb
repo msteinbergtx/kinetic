@@ -3,4 +3,18 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
   before_filter :authenticate_user!
+
+  private
+
+  def is_moderator?
+    unless current_user.is?(:moderator)
+      render status: :forbidden, text: 'no deal'
+    end
+  end
+
+  def is_admin?
+    unless current_user.is?(:admin)
+      render status: :forbidden, text: 'no deal'
+    end
+  end
 end

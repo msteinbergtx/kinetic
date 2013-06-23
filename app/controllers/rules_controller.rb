@@ -47,10 +47,4 @@ class RulesController < ApplicationController
       :active
     )
   end
-
-  def is_admin?
-    unless current_user.is?(:admin)
-      render status: :forbidden, text: 'no deal'
-    end
-  end
 end

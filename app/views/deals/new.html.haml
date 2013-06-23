@@ -1,0 +1,34 @@
+****** THIS PAGE IS FOR TESTING PURPOSES ONLY ******
+%br
+= @deal.errors.full_messages
+%br
+= simple_form_for @deal do |form|
+  = form.input :name
+  = form.input :user_id
+  = form.input :organization_id
+  = form.input :amount
+  = form.input :sell_date
+  = form.input :start_date
+  = form.submit
+
+Users:
+%table{border: 1}
+  %tr
+    %th
+      User Id
+    %th
+      User Email
+    %th
+      Organization Id
+    %th
+      Organization Name
+  - @users.each do |user|
+    %tr
+      %td
+        #{user.id}
+      %td
+        #{user.email}
+      %td
+        #{user.organization.id}
+      %td
+        #{user.organization.name}

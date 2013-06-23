@@ -1,19 +1,23 @@
 FactoryGirl.define do
+  sequence :email do |count|
+    "test#{count}@email.com"
+  end
+
   factory :user do
-    email 'test@email.com'
+    email
     password 'password'
     roles_list 'user'
   end
 
   factory :admin, class: User do
-    email 'test@email.com'
+    email
     password 'password'
     roles_list 'admin|user'
     association :organization
   end
 
   factory :moderator, class: User do
-    email 'test@email.com'
+    email
     password 'password'
     roles_list 'moderator|admin|user'
   end
@@ -22,6 +26,7 @@ FactoryGirl.define do
     amount 100.00
     payment_date Date.today
     association :user
+    association :organization
   end
 
   factory :organization do
@@ -33,27 +38,41 @@ FactoryGirl.define do
     active true
     association :organization
     association :applicability_engine, factory: :basic_applicability
-    association :payment_amount_engine, factory: :basic_payment_amount
+    association :compensation_engine, factory: :basic_compensation
     association :calculation_date_engine, factory: :date_offset_calculation_date
     association :payment_date_engine, factory: :date_offset_payment_date
+  end
+
+  factory :deal do
+    name 'test deal'
+    amount 10000
+    sell_date Time.now
+    start_date Time.now
+    association :user
+    association :organization
+  end
+
+  factory :commission_schedule do
+    association :rule
+    association :deal
   end
 
   factory :basic_applicability, class: Engine::BasicApplicability do
     calculation 'basic calculation'
   end
 
-  factory :basic_payment_amount, class: Engine::BasicPaymentAmount do
+  factory :basic_compensation, class: Engine::BasicCompensation do
     calculation 'basic payment amount'
   end
 
   factory :date_offset_calculation_date, class: Engine::DateOffsetCalculationDate do
-    event_type 'test event type'
+    event_type 'start_date'
     modifier '+'
     day_count 5
   end
 
   factory :date_offset_payment_date, class: Engine::DateOffsetPaymentDate do
-    event_type 'test event type'
+    event_type 'end_date'
     modifier '+'
     day_count 5
   end

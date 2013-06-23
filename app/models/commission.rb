@@ -1,5 +1,10 @@
 class Commission < ActiveRecord::Base
   belongs_to :user
+  belongs_to :organization
+  belongs_to :deal
+  belongs_to :rule
 
-  validates :user, :payment_date, :amount, presence: true
+  validates :user, :organization, :payment_date, :amount, presence: true
+
+  attr_accessible :user, :organization, :payment_date, :amount, :deal, :rule
 end

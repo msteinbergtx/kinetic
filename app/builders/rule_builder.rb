@@ -4,7 +4,7 @@ class RuleBuilder
     rule.calculation_date_engine = Engine::DateOffsetCalculationDate.new
     rule.payment_date_engine = Engine::DateOffsetPaymentDate.new
     rule.applicability_engine = Engine::BasicApplicability.new
-    rule.payment_amount_engine = Engine::BasicPaymentAmount.new
+    rule.compensation_engine = Engine::BasicCompensation.new
     rule
   end
 
@@ -28,8 +28,8 @@ class RuleBuilder
       build(params[:payment_date_engine_attributes])
     rule.applicability_engine = EngineBuilder.
       build(params[:applicability_engine_attributes])
-    rule.payment_amount_engine = EngineBuilder.
-      build(params[:payment_amount_engine_attributes])
+    rule.compensation_engine = EngineBuilder.
+      build(params[:compensation_engine_attributes])
     rule
   end
 end

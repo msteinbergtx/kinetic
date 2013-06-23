@@ -13,6 +13,6 @@
     = render 'rules/engines/date_offset_payment_date', payment_date_form: payment_date_form
   = form.simple_fields_for :applicability_engine do |applicability_form|
     = render 'rules/engines/basic_applicability', applicability_form: applicability_form
-  = form.simple_fields_for :payment_amount_engine do |payment_amount_form|
-    = render 'rules/engines/basic_payment_amount', payment_amount_form: payment_amount_form
+  = form.simple_fields_for :compensation_engine do |compensation_form|
+    = render 'rules/engines/basic_compensation', compensation_form: compensation_form
   = form.button :submit

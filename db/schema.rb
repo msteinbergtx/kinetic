@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622234050) do
+ActiveRecord::Schema.define(:version => 20130625063030) do
 
   create_table "basic_applicabilities", :force => true do |t|
     t.datetime "created_at",  :null => false
@@ -19,18 +19,31 @@ ActiveRecord::Schema.define(:version => 20130622234050) do
     t.string   "calculation", :null => false
   end
 
-  create_table "basic_payment_amounts", :force => true do |t|
+  create_table "basic_compensations", :force => true do |t|
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "calculation", :null => false
   end
 
+  create_table "commission_schedules", :force => true do |t|
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "deal_id",                    :null => false
+    t.integer  "rule_id",                    :null => false
+    t.datetime "commission_calculated_date"
+    t.datetime "calculate_commission_date"
+    t.datetime "commission_payment_date"
+  end
+
   create_table "commissions", :force => true do |t|
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.datetime "payment_date", :null => false
-    t.decimal  "amount",       :null => false
-    t.integer  "user_id",      :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.datetime "payment_date",    :null => false
+    t.decimal  "amount",          :null => false
+    t.integer  "user_id",         :null => false
+    t.integer  "organization_id"
+    t.integer  "deal_id"
+    t.integer  "rule_id"
   end
 
   create_table "date_offset_calculation_dates", :force => true do |t|
@@ -50,13 +63,16 @@ ActiveRecord::Schema.define(:version => 20130622234050) do
   end
 
   create_table "deals", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "name",       :null => false
-    t.decimal  "amount",     :null => false
-    t.datetime "sell_date",  :null => false
-    t.datetime "start_date", :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "name",                  :null => false
+    t.decimal  "amount",                :null => false
+    t.datetime "sell_date",             :null => false
+    t.datetime "start_date",            :null => false
     t.datetime "end_date"
+    t.integer  "user_id"
+    t.integer  "organization_id"
+    t.datetime "rules_associated_date"
   end
 
   create_table "organizations", :force => true do |t|
@@ -76,8 +92,8 @@ ActiveRecord::Schema.define(:version => 20130622234050) do
     t.string   "calculation_date_engine_type", :null => false
     t.integer  "payment_date_engine_id",       :null => false
     t.string   "payment_date_engine_type",     :null => false
-    t.integer  "payment_amount_engine_id",     :null => false
-    t.string   "payment_amount_engine_type",   :null => false
+    t.integer  "compensation_engine_id",       :null => false
+    t.string   "compensation_engine_type",     :null => false
     t.integer  "applicability_engine_id",      :null => false
     t.string   "applicability_engine_type",    :null => false
     t.integer  "organization_id",              :null => false
