@@ -13,6 +13,7 @@ class Deal < ActiveRecord::Base
     :amount,
     :sell_date,
     :start_date,
+    :end_date,
     presence: true
 
   def self.not_associated
