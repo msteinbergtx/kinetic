@@ -29,7 +29,8 @@ describe Engine::BasicCompensation do
           user: deal.user,
           organization: deal.organization,
           payment_date: Time.now,
-          deal: deal
+          deal: deal,
+          rule: rule
         ).and_return(commission)
 
         rule.compensation_engine.compensate(schedule)

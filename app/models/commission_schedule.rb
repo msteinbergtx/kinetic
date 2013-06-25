@@ -4,6 +4,8 @@ class CommissionSchedule < ActiveRecord::Base
 
   validates :deal, :rule, presence: true
 
+  attr_accessible :deal, :rule
+
   def self.pending_calculation
     where(
       'commission_calculated_date is ? AND calculate_commission_date <= ?',
