@@ -41,6 +41,7 @@ class DealsController < ApplicationController
       :name,
       :sell_date,
       :start_date,
+      :end_date,
       :organization_id,
       :user_id,
       :amount
