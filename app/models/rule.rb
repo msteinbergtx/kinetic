@@ -15,4 +15,22 @@ class Rule < ActiveRecord::Base
     :calculation_date_engine,
     :compensation_engine,
     :payment_date_engine
+
+  def self.live
+    date_time_where = <<-SQL
+start_date IS NULL AND end_date IS NULL OR
+start_date <= ? AND end_date >= ? OR
+start_date IS NULL AND end_date >= ? OR
+start_date <= ? AND end_date is NULL
+    SQL
+    current_time = Time.now
+    where(active: true).
+      where(
+        date_time_where,
+        current_time,
+        current_time,
+        current_time,
+        current_time
+      )
+  end
 end

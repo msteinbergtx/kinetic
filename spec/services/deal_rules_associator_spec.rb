@@ -25,5 +25,26 @@ describe DealRulesAssociator do
       expect(rule.deals).to eq [deal]
       expect(rule.deals.first.rules_associated_date).not_to be_nil
     end
+
+    it 'only considers live rules' do
+      rule = create(
+        :rule,
+        active: true,
+        start_date: nil,
+        end_date: nil,
+        applicability_engine: create(
+          :basic_applicability,
+          calculation: "name = 'for the test'"
+        )
+      )
+      organization = rule.organization
+      create(:rule, active: false, organization: organization)
+      deal = create(:deal, name: 'for the test', organization: organization)
+
+      DealRulesAssociator.associate(organization)
+
+      expect(deal.rules.length).to eq 1
+      expect(deal.rules.first).to eq rule
+    end
   end
 end

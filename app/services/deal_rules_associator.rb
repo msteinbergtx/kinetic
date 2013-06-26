@@ -1,6 +1,6 @@
 class DealRulesAssociator
   def self.associate(organization)
-    organization.rules.each do |rule|
+    organization.rules.live.each do |rule|
       deals = rule.
         applicability_engine.
         filter_rules(organization.deals.not_associated)
