@@ -23,7 +23,6 @@ tags
 !.keep
 .env
 /public/assets
-bin/
 !bin/setup
 coverage
 vendor/cache

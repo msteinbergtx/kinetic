@@ -27,3 +27,7 @@ group :test do
   gem 'timecop'
   gem 'warden'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
