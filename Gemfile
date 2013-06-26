@@ -1,19 +1,17 @@
 source 'https://rubygems.org'
 
-gem 'rails'
-gem 'pg'
-gem 'jquery-rails'
-gem 'devise'
-gem 'haml'
-gem 'simple_form'
-gem 'strong_parameters'
-gem 'cancan'
+gem 'rails', '4.0.0'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'cancan'
+gem 'coffee-rails', '> 3.2.1'
+gem 'devise', '3.0.0.rc'
+gem 'haml'
+gem 'jquery-rails'
+gem 'pg'
+gem 'protected_attributes'
+gem 'sass-rails',   '> 3.2.3'
+gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
+gem 'uglifier', '>= 1.0.3'
 
 group :development, :test do
   gem 'awesome_print'

@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Kinetic::Application.config.secret_token = '9181ef4adeb6fb9c6fd463f0ab9689c9132abdde664b781a2f682644fa3ebb05d7122b26d3f478079f16e1917f06a44fd45cbf6b27af7c226c2dad1c87c56966'
+Kinetic::Application.config.secret_key_base = '7752dec5981328229d1fd8c3510801219ea7bb42eb425c42ecf6f679d484692ddd3c1f25b40159cec9789ccbe3ef5dea6853ea156a268a58a612832c5c715787'

@@ -48,6 +48,7 @@ FactoryGirl.define do
     amount 10000
     sell_date Time.now
     start_date Time.now
+    end_date Time.now
     association :user
     association :organization
   end
