@@ -6,20 +6,22 @@ FactoryGirl.define do
   factory :user do
     email
     password 'password'
-    roles_list 'user'
+    roles ['user']
+    association :organization
   end
 
   factory :admin, class: User do
     email
     password 'password'
-    roles_list 'admin|user'
+    roles ['admin','user']
     association :organization
   end
 
   factory :moderator, class: User do
     email
     password 'password'
-    roles_list 'moderator|admin|user'
+    roles ['admin','user','moderator']
+    association :organization
   end
 
   factory :commission do
