@@ -1,8 +1,8 @@
 = simple_form_for rule do |form|
   = form.input :name
   = form.input :active
-  = form.input :start_date, as: :string
-  = form.input :end_date, as: :string
+  = form.input :start_date, as: :date_field
+  = form.input :end_date, as: :date_field
   = form.simple_fields_for :calculation_date_engine do |calculation_date_form|
     %label
       Trigger to calculate

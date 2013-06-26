@@ -11,6 +11,7 @@ module Kinetic
     config.autoload_paths += %W{
       #{config.root}/app/builders
       #{config.root}/app/services
+      #{config.root}/app/inputs
       #{config.root}/app/models/engine
     }
     config.assets.initialize_on_precompile = false

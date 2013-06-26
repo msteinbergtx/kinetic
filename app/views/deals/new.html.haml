@@ -7,9 +7,9 @@
   = form.input :user_id
   = form.input :organization_id
   = form.input :amount
-  = form.input :sell_date
-  = form.input :start_date
-  = form.input :end_date
+  = form.input :sell_date, as: :date_field
+  = form.input :start_date, as: :date_field
+  = form.input :end_date, as: :date_field
   = form.submit
 
 Users:
