@@ -66,5 +66,86 @@ describe DealRulesAssociator do
       expect(deal.rules.length).to eq 1
       expect(deal.rules.first).to eq rule
     end
+
+    it 'only considers deals within the current date' do
+      rule = create(
+        :rule,
+        active: true,
+        start_date: Time.now - 5.days,
+        end_date: Time.now + 5.days,
+        applicability_engine: create(
+          :basic_applicability,
+          calculation: "name = name:[for the test]"
+        )
+      )
+      organization = rule.organization
+      create(
+        :rule,
+        active: true,
+        start_date: Time.now - 15.days,
+        end_date: Time.now - 5.days,
+        organization: organization
+      )
+      deal = create(:deal, name: 'for the test', organization: organization)
+
+      DealRulesAssociator.associate(organization)
+
+      expect(deal.rules.length).to eq 1
+      expect(deal.rules.first).to eq rule
+    end
+
+    it 'handles rules with nil start dates' do
+      rule = create(
+        :rule,
+        active: true,
+        start_date: nil,
+        end_date: Time.now + 5.days,
+        applicability_engine: create(
+          :basic_applicability,
+          calculation: "name = name:[for the test]"
+        )
+      )
+      organization = rule.organization
+      create(
+        :rule,
+        active: true,
+        start_date: nil,
+        end_date: Time.now - 5.days,
+        organization: organization
+      )
+      deal = create(:deal, name: 'for the test', organization: organization)
+
+      DealRulesAssociator.associate(organization)
+
+      expect(deal.rules.length).to eq 1
+      expect(deal.rules.first).to eq rule
+    end
+
+    it 'handles rules with nil end dates' do
+      rule = create(
+        :rule,
+        active: true,
+        start_date: Time.now - 5.days,
+        end_date: nil,
+        applicability_engine: create(
+          :basic_applicability,
+          calculation: "name = name:[for the test]"
+        )
+      )
+      organization = rule.organization
+      create(
+        :rule,
+        active: true,
+        start_date: Time.now + 5.days,
+        end_date: nil,
+        organization: organization
+      )
+      deal = create(:deal, name: 'for the test', organization: organization)
+
+      DealRulesAssociator.associate(organization)
+
+      expect(deal.rules.length).to eq 1
+      expect(deal.rules.first).to eq rule
+    end
   end
 end
