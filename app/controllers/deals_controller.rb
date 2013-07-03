@@ -25,6 +25,7 @@ class DealsController < ApplicationController
 
   def associate
     deal = Deal.find(params[:id])
+    DealRulesAssociator.associate(deal.organization)
     redirect_to action: :index
   end
 
