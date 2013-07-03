@@ -13,7 +13,10 @@ describe Engine::BasicCompensation do
         deal = create(:deal, amount: 100)
         rule = create(
           :rule,
-          compensation_engine: create(:basic_compensation, calculation: '*, 0.25')
+          compensation_engine: create(
+            :basic_compensation,
+            calculation: '[AMT] * 0.25'
+          )
         )
         schedule = create(
           :commission_schedule,

@@ -8,7 +8,7 @@ describe CommissionCalculator do
           :rule,
           compensation_engine: create(
             :basic_compensation,
-            calculation: "*, 0.25"
+            calculation: "[AMT] * 0.25"
           )
         )
         organization = rule.organization
@@ -38,7 +38,7 @@ describe CommissionCalculator do
         :rule,
         compensation_engine: create(
           :basic_compensation,
-          calculation: "*, 0.25"
+          calculation: "[AMT] * 0.25"
         )
       )
       organization = rule.organization
