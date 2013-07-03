@@ -26,12 +26,12 @@ Deals
       %td
         = deal.organization.name
       %td
-        = link_to 'Calculate', calculate_deal_path(deal), method: 'POST'
+        = link_to 'Associate Rules', associate_deal_path(deal), method: 'POST'
 
 = link_to 'New deal', new_deal_path
 %br
 %br
-Commission Schedules
+Commission Rules/Schedules
 %br
 %table
   %tr
@@ -43,6 +43,8 @@ Commission Schedules
       Payment date
     %th
       Calculation date
+    %th
+      Actions
   - @scheduled_commissions.each do |schedule|
     %tr
       %td
@@ -53,6 +55,9 @@ Commission Schedules
         = schedule.commission_payment_date
       %td
         = schedule.calculate_commission_date
+      %td
+        = link_to 'Schedule', schedule_deal_path(schedule.deal), method: 'POST'
+        = link_to 'Calculate', calculate_deal_path(schedule.deal), method: 'POST'
 %br
 %br
 Commissions

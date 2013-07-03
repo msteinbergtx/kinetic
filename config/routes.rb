@@ -3,9 +3,11 @@ Kinetic::Application.routes.draw do
 
   resources :rules, only: [:new, :create, :index, :edit, :show, :update]
   resources :organizations, only: [:new, :create, :index, :edit, :update]
-  resources :deals, only: [:new, :create, :index, :calculate] do
+  resources :deals, only: [:new, :create, :index, :calculate, :schedule, :associate] do
     member do
+      post :associate
       post :calculate
+      post :schedule
     end
   end
 

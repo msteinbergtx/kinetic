@@ -23,13 +23,22 @@ class DealsController < ApplicationController
     end
   end
 
-  def calculate
+  def associate
     deal = Deal.find(params[:id])
-    DealRulesAssociator.associate(deal.organization)
+    redirect_to action: :index
+  end
+
+  def schedule
+    deal = Deal.find(params[:id])
     deal.commission_schedules.each do |schedule|
       CommissionScheduler.schedule_payment_date(schedule)
       CommissionScheduler.schedule_calculation_date(schedule)
     end
+    redirect_to action: :index
+  end
+
+  def calculate
+    deal = Deal.find(params[:id])
     CommissionCalculator.calculate(deal)
     redirect_to action: :index
   end
