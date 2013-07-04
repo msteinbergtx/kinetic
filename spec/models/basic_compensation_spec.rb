@@ -15,7 +15,7 @@ describe Engine::BasicCompensation do
           :rule,
           compensation_engine: create(
             :basic_compensation,
-            calculation: '[AMT] * 0.25'
+            calculation: '[amount] * 0.25'
           )
         )
         schedule = create(

@@ -8,7 +8,7 @@ class Engine::BasicCompensation < ActiveRecord::Base
   def compensate(schedule)
     deal = schedule.deal
     rule = schedule.rule
-    eval_calculation = calculation.gsub(/\[AMT\]/, deal.amount.to_s)
+    eval_calculation = calculation.gsub(/\[amount\]/, deal.amount.to_s)
     calculation.gsub!(/[A-Za-z]/, '')
     commission = Commission.new(
       amount: eval(eval_calculation),
