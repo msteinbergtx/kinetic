@@ -38,6 +38,8 @@ GEM
     atomic (1.1.9)
     awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.3.2.0)
+      sass (~> 3.2)
     builder (3.1.4)
     cancan (1.6.10)
     capybara (2.1.0)
@@ -164,6 +166,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bootstrap-sass
   cancan
   capybara-webkit
   coffee-rails (> 3.2.1)

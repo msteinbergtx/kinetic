@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(version: 20130626065312) do
   end
 
   create_table "basic_compensations", force: true do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "calculation", null: false
   end
 
   create_table "commission_schedules", force: true do |t|
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "deal_id",                    null: false
     t.integer  "rule_id",                    null: false
     t.datetime "commission_calculated_date"
@@ -79,8 +79,8 @@ ActiveRecord::Schema.define(version: 20130626065312) do
   end
 
   create_table "organizations", force: true do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "name",       null: false
   end
 
