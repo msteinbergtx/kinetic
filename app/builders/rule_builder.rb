@@ -19,17 +19,28 @@ class RuleBuilder
     update_engines(rule, params)
   end
 
-  private
-
   def self.update_engines(rule, params)
-    rule.calculation_date_engine = EngineBuilder.
-      build(params[:calculation_date_engine_attributes])
-    rule.payment_date_engine = EngineBuilder.
-      build(params[:payment_date_engine_attributes])
-    rule.applicability_engine = EngineBuilder.
-      build(params[:applicability_engine_attributes])
-    rule.compensation_engine = EngineBuilder.
-      build(params[:compensation_engine_attributes])
+    if params[:calculation_date_engine_attributes]
+      rule.calculation_date_engine = EngineBuilder.
+        build(params[:calculation_date_engine_attributes])
+    end
+
+    if params[:payment_date_engine_attributes]
+      rule.payment_date_engine = EngineBuilder.
+        build(params[:payment_date_engine_attributes])
+    end
+
+    if params[:applicability_engine_attributes]
+      rule.applicability_engine = EngineBuilder.
+        build(params[:applicability_engine_attributes])
+    end
+
+    if params[:compensation_engine_attributes]
+      rule.compensation_engine = EngineBuilder.
+        build(params[:compensation_engine_attributes])
+    end
+
     rule
   end
+  private_class_method :update_engines
 end

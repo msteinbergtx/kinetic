@@ -12,6 +12,34 @@ describe Rule do
 
   it { expect(subject).to validate_presence_of(:name) }
 
+  describe '#mutable' do
+    it 'returns false if the rule is associated with a deal' do
+      deal = create(:deal)
+      rule = create(:rule)
+      rule.deals << deal
+
+      expect(rule.mutable?).to be_false
+    end
+
+    it 'returns true if the rule is not associated with a deal' do
+      rule = build(:rule, deals: [])
+
+      expect(rule.mutable?).to be_true
+    end
+  end
+
+  describe '.deactivated' do
+    it 'only returns rules that are not active' do
+      rule = create(:rule, active: false)
+      create(:rule, active: true)
+
+      rules = Rule.deactivated
+
+      expect(rules.length).to eq 1
+      expect(rules).to eq [rule]
+    end
+  end
+
   describe '.live' do
     it 'only returns rules that have an active flag set to true' do
       rule = create(

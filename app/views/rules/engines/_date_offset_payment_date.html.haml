@@ -1,5 +1,6 @@
 .js-payment-date
-  = payment_date_form.input :event_type
-  = payment_date_form.input :modifier
-  = payment_date_form.input :day_count
-  = payment_date_form.input :type, as: :hidden, input_html: { value: 'DateOffsetPaymentDate' }
+  = payment_date_form.input :event_type, disabled: disabled
+  = payment_date_form.input :modifier, disabled: disabled
+  = payment_date_form.input :day_count, disabled: disabled
+  = payment_date_form.input :type, as: :hidden, input_html: { value: 'DateOffsetPaymentDate' }, disabled: disabled
+  = payment_date_form.input :id, as: :hidden, disabled: disabled

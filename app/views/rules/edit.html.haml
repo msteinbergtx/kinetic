@@ -1,1 +1,3 @@
-= render 'form', rule: @rule
+- if !@rule.mutable?
+  This rule is already associated with deals and cannot be modified.
+= render 'form', rule: @rule, disabled: !@rule.mutable?

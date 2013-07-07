@@ -1,3 +1,4 @@
 Use [amount] to represent the amount of the deal. ex: "[amount] * 0.25"
-= compensation_form.input :calculation, label: 'Commission formula'
-= compensation_form.input :type, as: :hidden, input_html: { value: 'BasicCompensation' }
+= compensation_form.input :calculation, label: 'Commission formula', disabled: disabled
+= compensation_form.input :type, as: :hidden, input_html: { value: 'BasicCompensation' }, disabled: disabled
+= compensation_form.input :id, as: :hidden, disabled: disabled

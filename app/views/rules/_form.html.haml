@@ -1,18 +1,18 @@
 = simple_form_for rule do |form|
   = form.input :name
   = form.input :active
-  = form.input :start_date, as: :date_field
-  = form.input :end_date, as: :date_field
+  = form.input :start_date, as: :date_field, disabled: disabled
+  = form.input :end_date, as: :date_field, disabled: disabled
   = form.simple_fields_for :calculation_date_engine do |calculation_date_form|
     %label
       Trigger to calculate
-    = render 'rules/engines/date_offset_calculation_date', calculation_date_form: calculation_date_form
+    = render 'rules/engines/date_offset_calculation_date', calculation_date_form: calculation_date_form, disabled: disabled
   = form.simple_fields_for :payment_date_engine do |payment_date_form|
     %label
       Trigger to pay
-    = render 'rules/engines/date_offset_payment_date', payment_date_form: payment_date_form
+    = render 'rules/engines/date_offset_payment_date', payment_date_form: payment_date_form, disabled: disabled
   = form.simple_fields_for :applicability_engine do |applicability_form|
-    = render 'rules/engines/basic_applicability', applicability_form: applicability_form
+    = render 'rules/engines/basic_applicability', applicability_form: applicability_form, disabled: disabled
   = form.simple_fields_for :compensation_engine do |compensation_form|
-    = render 'rules/engines/basic_compensation', compensation_form: compensation_form
+    = render 'rules/engines/basic_compensation', compensation_form: compensation_form, disabled: disabled
   = form.button :submit

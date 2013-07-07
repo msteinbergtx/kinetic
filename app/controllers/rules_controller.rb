@@ -37,6 +37,12 @@ class RulesController < ApplicationController
     end
   end
 
+  def destroy
+    rule = Rule.find(params[:id])
+    rule.destroy
+    redirect_to action: :index
+  end
+
   private
 
   def rules_params

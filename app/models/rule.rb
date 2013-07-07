@@ -16,6 +16,10 @@ class Rule < ActiveRecord::Base
     :compensation_engine,
     :payment_date_engine
 
+  def self.deactivated
+    where(active: false)
+  end
+
   def self.live
     date_time_where = <<-SQL
 start_date IS NULL AND end_date IS NULL OR
@@ -32,5 +36,9 @@ start_date <= ? AND end_date is NULL
         current_time,
         current_time
       )
+  end
+
+  def mutable?
+    deals.count == 0
   end
 end

@@ -44,12 +44,25 @@ feature 'User works with Rule', js: true do
     expect(page).to have_content 'the new name'
   end
 
+  scenario 'updates an existing Rule that is associated with a Deal' do
+    rule = create(:rule, name: 'the old name')
+    deal = create(:deal)
+    rule.deals << deal
+    user = create(:admin, organization: rule.organization)
+    login_as(user)
+
+    visit rules_path
+    click_on 'Edit'
+
+    expect(page).to have_content('This rule is already associated with deals and cannot be modified.')
+  end
+
   scenario 'updates an engine' do
     applicability_engine = create(
       :basic_applicability,
       calculation: 'old calculation'
     )
-    rule = create(:rule, applicability_engine: applicability_engine)
+    rule = create(:rule, applicability_engine: applicability_engine, deals: [])
     user = create(:admin, organization: rule.organization)
     login_as(user)
 
@@ -73,5 +86,17 @@ feature 'User works with Rule', js: true do
 
     expect(page).to have_content 'part of my org'
     expect(page).not_to have_content 'not part of my org'
+  end
+
+  scenario 'delete a rule' do
+    organization = create(:organization)
+    user = create(:admin, organization: organization)
+    create(:rule, active: true, name: 'delete me', organization: organization)
+    login_as(user)
+
+    visit rules_path
+    click_on 'Deactivate'
+
+    expect(page).not_to have_content 'delete me'
   end
 end

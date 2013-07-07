@@ -23,5 +23,7 @@ Commissions Rules
         = rule.end_date
       %td
         = link_to 'Edit', edit_rule_path(rule)
+        - if rule.active?
+          = link_to 'Deactivate', rule_path(rule), method: 'DELETE'
 
 = link_to 'New rule', new_rule_path
