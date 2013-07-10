@@ -26,6 +26,31 @@ describe DealRulesAssociator do
       expect(rule.deals.first.rules_associated_date).not_to be_nil
     end
 
+    it 'associates multiple rules with a deal' do
+      organization = create(:organization)
+      create(
+        :rule,
+        organization: organization,
+        applicability_engine: create(
+          :basic_applicability,
+          calculation: "name = name:[for the test]"
+        )
+      )
+      create(
+        :rule,
+        organization: organization,
+        applicability_engine: create(
+          :basic_applicability,
+          calculation: "name = name:[for the test]"
+        )
+      )
+      deal = create(:deal, name: 'for the test', organization: organization)
+
+      DealRulesAssociator.associate(organization)
+
+      expect(deal.rules.count).to eq 2
+    end
+
     it 'can handle multiple values combined with AND' do
       rule = create(
         :rule,

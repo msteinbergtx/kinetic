@@ -1,10 +1,13 @@
 class DealRulesAssociator
   def self.associate(organization)
+    deals_for_rules = {}
     organization.rules.live.each do |rule|
-      deals = rule.
+      deals_for_rules[rule] = rule.
         applicability_engine.
-        filter_rules(organization.deals.not_associated)
-      set_deal_rules_associated_date(deals, rule)
+        filter_rules(organization.deals.not_associated).load
+    end
+    deals_for_rules.each_pair do |rule, deals_to_associate|
+      set_deal_rules_associated_date(deals_to_associate, rule)
     end
   end
 
