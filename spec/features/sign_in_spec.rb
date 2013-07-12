@@ -16,7 +16,7 @@ feature 'User Sessions', js: true do
 
     click_button 'Sign in'
 
-    expect(page).to have_content 'Kinetic'
+    expect(page).to have_content 'Home'
   end
 
   scenario 'Admin signs in' do
@@ -28,7 +28,7 @@ feature 'User Sessions', js: true do
 
     click_button 'Sign in'
 
-    expect(page).to have_content 'Kinetic'
+    expect(page).to have_content 'Home'
     expect(page).to have_link 'Commission rules'
   end
 
@@ -41,7 +41,7 @@ feature 'User Sessions', js: true do
 
     click_button 'Sign in'
 
-    expect(page).to have_content 'Kinetic'
+    expect(page).to have_content 'Home'
     expect(page).to have_content 'You have no commissions'
   end
 
@@ -56,7 +56,7 @@ feature 'User Sessions', js: true do
 
     click_button 'Sign in'
 
-    expect(page).to have_content 'Kinetic'
+    expect(page).to have_content 'Home'
     expect(page).to have_content '$200.00'
     expect(page).not_to have_content '$150.00'
   end
@@ -70,7 +70,7 @@ feature 'User Sessions', js: true do
 
     click_button 'Sign up'
 
-    expect(page).to have_content 'Kinetic'
+    expect(page).to have_content 'Home'
     expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
 

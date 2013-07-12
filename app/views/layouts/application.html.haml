@@ -15,20 +15,16 @@
       %nav.navbar-inner
         .container
           = render 'layouts/navigation'
-    - if current_user.present?
-      You are currently logged in to Organization #{current_user.organization.present? ? current_user.organization.name : 'No Org'} as User #{current_user.email}
-    %p{ class: 'notice' }
-      = notice
-    %p{ class: 'alert' }
-      = alert
-    = link_to 'Home', root_path
-    %br
+    - if notice
+      %p{ class: 'notice' }
+        = notice
+    - if alert
+      %p{ class: 'alert' }
+        = alert
 
     #main{:role => "main"}
       .container
         .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
+          = render 'layouts/messages'
+          = yield
           %footer

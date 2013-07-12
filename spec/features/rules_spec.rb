@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'User works with Rule', js: true do
+feature 'Admin works with Rule', js: true do
   scenario 'creates a rule' do
     user = create(:admin)
     login_as(user)

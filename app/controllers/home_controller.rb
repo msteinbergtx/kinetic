@@ -1,7 +1,12 @@
 class HomeController < ApplicationController
-  before_filter :authenticate_user!
-
   def index
-    @commissions = current_user.commissions
+    if current_user.is?(:moderator)
+
+    elsif current_user.is?(:admin)
+
+    elsif current_user.is?(:user)
+      @commissions = current_user.commissions
+      render(template: 'home/user_home')
+    end
   end
 end
