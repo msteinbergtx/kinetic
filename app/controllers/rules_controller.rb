@@ -2,7 +2,7 @@ class RulesController < ApplicationController
   before_filter :is_admin?
 
   def index
-    @rules = current_user.organization.rules
+    @rules = current_organization.rules
   end
 
   def new
@@ -11,7 +11,7 @@ class RulesController < ApplicationController
 
   def create
     @rule = RuleBuilder.create_from_params(rules_params, params[:rule])
-    @rule.organization = current_user.organization
+    @rule.organization = current_organization
     if @rule.save
       redirect_to action: :index
     else

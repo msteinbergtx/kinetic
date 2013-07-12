@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_organization
+    current_user.organization
+  end
+
   def is_moderator?
     unless current_user.is?(:moderator)
       render status: :forbidden, text: 'no deal'

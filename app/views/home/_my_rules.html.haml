@@ -1,0 +1,16 @@
+- if rules.count > 0
+  Rules
+  %table
+    %tr
+      %th
+        Name
+      %th
+        Deal Count
+    - rules.each do |rule|
+      %tr
+        %td
+          = rule.name
+        %td
+          = rule.deals.count
+- else
+  You have no rules

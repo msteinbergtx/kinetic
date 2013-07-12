@@ -1,6 +1,22 @@
 require 'spec_helper'
 
 feature 'Admin works with Rule', js: true do
+  scenario 'admin logs in and sees rules report' do
+    user = create(:admin)
+    organization = user.organization
+    rule = create(:rule, name: 'the rule', organization: organization)
+    first_deal = create(:deal, organization: organization)
+    first_deal.rules << rule
+    second_deal = create(:deal, organization: organization)
+    second_deal.rules << rule
+    login_as(user)
+
+    visit root_path
+
+    expect(page).to have_content 'the rule'
+    expect(page).to have_content '2'
+  end
+
   scenario 'creates a rule' do
     user = create(:admin)
     login_as(user)

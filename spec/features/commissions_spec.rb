@@ -7,6 +7,7 @@ feature 'commissiosn', js: true do
     create(:commission, amount: 600)
     user.commissions << commission
     login_as(user)
+
     visit root_path
 
     expect(page).to have_content(500)
