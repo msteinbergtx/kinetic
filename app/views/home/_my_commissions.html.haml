@@ -1,6 +1,6 @@
 - if commissions.count > 0
   Commissions
-  %table
+  %table{:class=>"table table-striped table-bordered table-condensed"}
     %tr
       %th
         Payment Date
@@ -9,7 +9,7 @@
     - commissions.each do |commission|
       %tr
         %td
-          = commission.payment_date
+          = commission.payment_date.try(:strftime, '%D')
         %td
           = number_to_currency(commission.amount)
 - else
