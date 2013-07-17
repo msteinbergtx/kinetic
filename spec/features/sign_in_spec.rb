@@ -29,7 +29,7 @@ feature 'User Sessions', js: true do
     click_button 'Sign in'
 
     expect(page).to have_content 'Home'
-    expect(page).to have_link 'Commission rules'
+    expect(page).to have_link 'Commission Rules'
   end
 
   scenario 'Broker signs in' do

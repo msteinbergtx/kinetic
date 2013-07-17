@@ -12,3 +12,10 @@
   - else
     %li
       = link_to('Sign up', new_user_registration_path)
+  - if current_user.present? && current_user.is?(:admin)
+    %li
+      = link_to('Commission Rules', rules_path)
+  - if current_user.present? && current_user.is?(:moderator)
+    %li
+      = link_to('Deals', deals_path)
+
