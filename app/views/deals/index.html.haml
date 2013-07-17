@@ -52,9 +52,9 @@ Commission Rules/Schedules
       %td
         = schedule.rule.name
       %td
-        = schedule.commission_payment_date.strftime("%D")
+        = schedule.commission_payment_date.try(:strftime, '%D')
       %td
-        = schedule.calculate_commission_date.strftime("%D")
+        = schedule.calculate_commission_date.try(:strftime, '%D')
       %td
         = link_to 'Schedule', schedule_deal_path(schedule.deal), method: 'POST'
         = link_to 'Calculate', calculate_deal_path(schedule.deal), method: 'POST'
@@ -83,6 +83,6 @@ Commissions
       %td
         = commission.user.email
       %td
-        = commission.payment_date.strftime("%D")
+        = commission.payment_date.try(:strftime, '%D')
       %td
         = number_to_currency(commission.amount)

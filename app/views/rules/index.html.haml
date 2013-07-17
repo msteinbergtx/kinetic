@@ -18,9 +18,9 @@ Commissions Rules
       %td
         = rule.active
       %td
-        = rule.start_date.strftime("%D")
+        = rule.start_date.try(:strftime, '%D')
       %td
-        = rule.end_date.strftime("%D")
+        = rule.end_date.try(:strftime, '%D')
       %td
         = link_to 'Edit', edit_rule_path(rule)
         - if rule.active?

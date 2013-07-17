@@ -9,7 +9,7 @@
     - commissions.each do |commission|
       %tr
         %td
-          = commission.payment_date.strftime("%D")
+          = commission.payment_date.try(:strftime, '%D')
         %td
           = number_to_currency(commission.amount)
 - else
