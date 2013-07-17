@@ -12,6 +12,15 @@ describe User do
 
       expect(user.roles).to eq ['user']
     end
+
+    it 'assigns the user to an organization' do
+      user = build(:user, organization: nil)
+      organization = create(:organization)
+
+      user.save!
+
+      expect(user.organization).to eq organization
+    end
   end
 
   describe '#is?' do

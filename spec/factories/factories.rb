@@ -8,6 +8,10 @@ FactoryGirl.define do
     password 'password'
     roles ['user']
     association :organization
+
+    before(:create) do |user|
+      create(:organization)
+    end
   end
 
   factory :admin, class: User do

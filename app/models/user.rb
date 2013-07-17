@@ -5,9 +5,7 @@ class User < ActiveRecord::Base
   has_many :commissions
   belongs_to :organization
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-
-  before_create :set_base_role
+  before_create :set_base_role, :assign_organization
 
   def is?(role)
     roles.include?(role.to_s)
@@ -27,6 +25,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def assign_organization
+   self.organization = Organization.first
+  end
 
   def set_base_role
     self.roles ||= ['user']
