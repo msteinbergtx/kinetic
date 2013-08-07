@@ -1,5 +1,5 @@
 Commissions Rules
-%table{:class=>"table table-striped table-bordered table-condensed"}
+%table{class: "table table-striped table-bordered table-condensed"}
   %tr
     %th
       Name
@@ -18,9 +18,9 @@ Commissions Rules
       %td
         = rule.active
       %td
-        = rule.start_date.try(:strftime, '%D')
+        = format_date(rule.start_date)
       %td
-        = rule.end_date.try(:strftime, '%D')
+        = format_date(rule.end_date)
       %td
         = link_to 'Edit', edit_rule_path(rule)
         - if rule.active?

@@ -3,7 +3,7 @@
 %br
 Deals
 %br
-%table{:class=>"table table-striped table-bordered table-condensed"} 
+%table{class: "table table-striped table-bordered table-condensed"} 
   %tr
     %th
       Name
@@ -33,7 +33,7 @@ Deals
 %br
 Commission Rules/Schedules
 %br
-%table{:class=>"table table-striped table-bordered table-condensed"}
+%table{class: "table table-striped table-bordered table-condensed"}
   %tr
     %th
       Deal name
@@ -52,9 +52,9 @@ Commission Rules/Schedules
       %td
         = schedule.rule.name
       %td
-        = schedule.commission_payment_date.try(:strftime, '%D')
+        = format_date(schedule.commission_payment_date)
       %td
-        = schedule.calculate_commission_date.try(:strftime, '%D')
+        = format_date(schedule.calculate_commission_date)
       %td
         = link_to 'Schedule', schedule_deal_path(schedule.deal), method: 'POST'
         = link_to 'Calculate', calculate_deal_path(schedule.deal), method: 'POST'
@@ -62,7 +62,7 @@ Commission Rules/Schedules
 %br
 Commissions
 %br
-%table{:class=>"table table-striped table-bordered table-condensed"}
+%table{class: "table table-striped table-bordered table-condensed"}
   %tr
     %th
       Deal name
@@ -83,6 +83,6 @@ Commissions
       %td
         = commission.user.email
       %td
-        = commission.payment_date.try(:strftime, '%D')
+        = format_date(commission.payment_date)
       %td
         = number_to_currency(commission.amount)
