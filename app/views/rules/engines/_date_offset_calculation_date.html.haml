@@ -1,6 +1,8 @@
 .js-calculation-date
-  = calculation_date_form.input :event_type, disabled: disabled
-  = calculation_date_form.input :modifier, disabled: disabled
-  = calculation_date_form.input :day_count, disabled: disabled
+  = calculation_date_form.input :event_type, collection: [['start_date'],['end_date']], disabled: disabled
+  = calculation_date_form.input :modifier, collection: [['+'],['-']], as: :radio_buttons
+  = calculation_date_form.input :day_count, disabled: disabled, :input_html => {:style => 'width: 50px'}
   = calculation_date_form.input :type, as: :hidden, input_html: { value: 'DateOffsetCalculationDate' }, disabled: disabled
   = calculation_date_form.input :id, as: :hidden, disabled: disabled
+
+
