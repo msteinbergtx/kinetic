@@ -10,12 +10,18 @@ describe Engine::BasicCompensation do
   describe '#compensate' do
     it 'creates a Commission for the user' do
       Timecop.freeze do
-        deal = create(:deal, amount: 100)
+        deal = create(
+          :deal,
+          details: {
+            'amount' => 100.to_s,
+            'amount2' => 3.to_s
+          }
+        )
         rule = create(
           :rule,
           compensation_engine: create(
             :basic_compensation,
-            calculation: '[amount] * 0.25'
+            calculation: '[amount] * 0.25 + [amount2] + 5'
           )
         )
         schedule = create(
@@ -28,7 +34,7 @@ describe Engine::BasicCompensation do
         commission = double('commission')
         commission.should_receive(:save!)
         Commission.should_receive(:new).with(
-          amount: 25,
+          amount: 33,
           user: deal.user,
           organization: deal.organization,
           payment_date: Time.now,

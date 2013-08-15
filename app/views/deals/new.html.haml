@@ -6,10 +6,8 @@
   = form.input :name
   = form.input :user_id
   = form.input :organization_id
-  = form.input :amount
-  = form.input :sell_date, as: :date_field
-  = form.input :start_date, as: :date_field
-  = form.input :end_date, as: :date_field
+  Enter details like this { "amount" => "100.00", "start_date" => "3/11/1980" }
+  = form.input :details, as: :text
   = form.submit
 
 Users:

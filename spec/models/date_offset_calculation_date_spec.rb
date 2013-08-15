@@ -23,13 +23,17 @@ describe Engine::DateOffsetCalculationDate do
           modifier: '+',
           day_count: 5
         )
-        deal = build(:deal, start_date: Time.now)
-        schedule = build(:commission_schedule, calculate_commission_date: nil)
+        deal = create(:deal, details: { "start_date" => Time.now.to_s })
+        schedule = build(
+          :commission_schedule,
+          calculate_commission_date: nil,
+          deal: deal
+        )
 
         engine.set_date(schedule)
 
         expect(schedule.calculate_commission_date).
-          to be_within(10).of(deal.start_date + 5.days)
+          to be_within(10).of(deal.get_datetime('start_date') + 5.days)
       end
     end
   end

@@ -59,11 +59,11 @@ describe DealRulesAssociator do
         end_date: nil,
         applicability_engine: create(
           :basic_applicability,
-          calculation: "amount >= amount:[500] AND amount <= amount:[700]"
+          calculation: "(details -> 'amount')::decimal >= amount:[500] AND (details -> 'amount')::decimal <= amount:[700]"
         )
       )
       organization = rule.organization
-      deal = create(:deal, amount: 700, organization: organization)
+      deal = create(:deal, details: { amount: 700 }, organization: organization)
 
       DealRulesAssociator.associate(organization)
 
