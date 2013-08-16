@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130626065312) do
+ActiveRecord::Schema.define(version: 20130815034605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "basic_applicabilities", force: true do |t|
     t.datetime "created_at",  null: false
@@ -23,14 +24,14 @@ ActiveRecord::Schema.define(version: 20130626065312) do
   end
 
   create_table "basic_compensations", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "calculation", null: false
   end
 
   create_table "commission_schedules", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "deal_id",                    null: false
     t.integer  "rule_id",                    null: false
     t.datetime "commission_calculated_date"
@@ -43,10 +44,10 @@ ActiveRecord::Schema.define(version: 20130626065312) do
     t.datetime "updated_at",      null: false
     t.datetime "payment_date",    null: false
     t.decimal  "amount",          null: false
-    t.integer  "user_id",         null: false
     t.integer  "organization_id"
     t.integer  "deal_id"
     t.integer  "rule_id"
+    t.integer  "user_id"
   end
 
   create_table "date_offset_calculation_dates", force: true do |t|
@@ -69,18 +70,15 @@ ActiveRecord::Schema.define(version: 20130626065312) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "name",                  null: false
-    t.decimal  "amount",                null: false
-    t.datetime "sell_date",             null: false
-    t.datetime "start_date",            null: false
-    t.datetime "end_date"
     t.integer  "user_id"
     t.integer  "organization_id"
     t.datetime "rules_associated_date"
+    t.hstore   "details"
   end
 
   create_table "organizations", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "name",       null: false
   end
 

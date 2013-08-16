@@ -11,7 +11,7 @@ class Engine::DateOffsetCalculationDate < ActiveRecord::Base
 
   def set_date(schedule)
     deal = schedule.deal
-    schedule.calculate_commission_date = deal.send(event_type).
+    schedule.calculate_commission_date = deal.get_datetime(event_type).
       send(self.modifier, self.day_count.days)
     schedule.save!
   end

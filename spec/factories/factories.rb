@@ -51,10 +51,7 @@ FactoryGirl.define do
 
   factory :deal do
     name 'test deal'
-    amount 10000
-    sell_date Time.now
-    start_date Time.now
-    end_date Time.now
+    details {{ "amount" => "100.00" }}
     association :user
     association :organization
   end
