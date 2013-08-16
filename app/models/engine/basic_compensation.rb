@@ -8,10 +8,8 @@ class Engine::BasicCompensation < ActiveRecord::Base
   def compensate(schedule)
     deal = schedule.deal
     rule = schedule.rule
-    eval_calculation = calculation.gsub(/\[amount\]/, deal.amount.to_s)
-    calculation.gsub!(/[A-Za-z]/, '')
     commission = Commission.new(
-      amount: eval(eval_calculation),
+      amount: eval(fill_in_real_values(deal)),
       user: deal.user,
       organization: deal.organization,
       payment_date: schedule.commission_payment_date,
@@ -19,5 +17,13 @@ class Engine::BasicCompensation < ActiveRecord::Base
       rule: rule
     )
     commission.save!
+  end
+
+  private
+
+  def fill_in_real_values(deal)
+    calculation.gsub(/\[(?<value>.+?)\]/) do |match|
+      deal.details.nil? ? '0' : deal.details[$1]
+    end
   end
 end

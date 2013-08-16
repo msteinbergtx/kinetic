@@ -13,12 +13,15 @@ describe CommissionScheduler do
             day_count: 7
           )
         )
-        deal = create(:deal, start_date: Time.now + 10.days)
+        deal = create(
+          :deal,
+          details: { 'start_date' => (DateTime.now + 10.days).to_s }
+        )
         schedule = create(:commission_schedule, deal: deal, rule: rule)
 
         CommissionScheduler.schedule_payment_date(schedule)
 
-        expect(schedule.commission_payment_date).to eq(Time.now + 10.days + 7.days)
+        expect(schedule.commission_payment_date).to be_within(1).of(DateTime.now + 10.days + 7.days)
       end
     end
   end
@@ -35,13 +38,13 @@ describe CommissionScheduler do
             day_count: 4
           )
         )
-        deal = create(:deal, start_date: Time.now + 18.days)
+        deal = create(:deal, details: { 'start_date' => (DateTime.now + 18.days).to_s })
         schedule = create(:commission_schedule, deal: deal, rule: rule)
 
         CommissionScheduler.schedule_calculation_date(schedule)
 
         expect(schedule.calculate_commission_date).
-          to eq(Time.now + 18.days + 4.days)
+          to be_within(1).of(DateTime.now + 18.days + 4.days)
       end
     end
   end
