@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :commissions
+  has_many :payment_plans
+  has_many :payments
+
   belongs_to :organization
 
   before_create :set_base_role, :assign_organization

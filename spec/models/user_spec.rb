@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe User do
   it { expect(subject).to have_many(:commissions) }
+  it { expect(subject).to have_many(:payment_plans) }
+  it { expect(subject).to have_many(:payments) }
+
   it { expect(subject).to belong_to(:organization) }
 
   describe 'creation' do
