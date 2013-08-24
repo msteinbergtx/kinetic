@@ -1,6 +1,6 @@
 The following columns are available for querying on the deals table: name, amount, sell_date, start_date, end_date, user_id.
 %br
 When entering a column value use the format column_name:[value] ex: "amount >= amount:[100] AND amount <= amount:[200]"
-= applicability_form.input :calculation, label: 'Applies to', disabled: disabled, :input_html => {:style => 'width: 500px'}
+= applicability_form.input :calculation, label: 'Applies to', disabled: disabled, input_html: { class: 'formula-field' }
 = applicability_form.input :type, as: :hidden, input_html: { value: 'BasicApplicability' }, disabled: disabled
 = applicability_form.input :id, as: :hidden, disabled: disabled
