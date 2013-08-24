@@ -1,6 +1,6 @@
 = simple_form_for rule do |form|
   = form.input :name
-  = form.input :active
+  = form.input :active, inline_label: 'Check to make this rule active'
   = form.input :start_date, as: :date_field, disabled: disabled
   = form.input :end_date, as: :date_field, disabled: disabled
   = form.simple_fields_for :calculation_date_engine do |calculation_date_form|
