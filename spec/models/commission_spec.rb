@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Commission do
+  it { expect(subject).to have_many(:payments) }
+
   it { expect(subject).to belong_to(:user) }
   it { expect(subject).to belong_to(:organization) }
   it { expect(subject).to belong_to(:deal) }

@@ -1,4 +1,6 @@
 class Commission < ActiveRecord::Base
+  has_many :payments
+
   belongs_to :user
   belongs_to :organization
   belongs_to :deal
