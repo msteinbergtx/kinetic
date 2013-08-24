@@ -28,7 +28,7 @@ feature 'Admin works with Rule', js: true do
     fill_in 'End date', with: Date.today + 5
 
     within '.js-payment-date' do
-      select 'start_date', :from => 'Event type'
+      select 'start_date', from: 'Event type'
       choose '+'
       fill_in 'Day count', with: 100
     end
