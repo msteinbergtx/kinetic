@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'protected_attributes'
 gem 'sass-rails',   '> 3.2.3'
-gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
+gem 'simple_form', '~> 3.0.0'
 gem 'uglifier', '>= 1.0.3'
 
 group :development, :test do
